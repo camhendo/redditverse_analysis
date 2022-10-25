@@ -91,8 +91,7 @@ class Scraper():
                     b['company'] = 'no company available'
                 return b, url
             except:
-                print('An Error Occured')
-            return None, None
+                return None, None
 
         pool = ProcessPool(nodes=min(self.max_jobs, len(urls)))
         jobs = pool.uimap(get_reddit,urls)
@@ -120,8 +119,7 @@ class Scraper():
                     r = json.loads(data)
                     return r, url
             except:
-                print('An Error Occured')
-            return None, None
+                return None, None
         
         
         pool = ProcessPool(nodes=min(self.max_jobs, len(urls)))
